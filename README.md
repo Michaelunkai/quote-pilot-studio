@@ -5,7 +5,8 @@ QuotePilot Studio is a polished React + TypeScript web app for freelancers, cons
 ## Live links
 
 - GitHub repository: https://github.com/Michaelunkai/quote-pilot-studio
-- Netlify deployed URL: Pending Netlify authentication. Resume with the deploy command below after login.
+- Deployed website: https://michaelunkai.github.io/quote-pilot-studio/
+- Netlify status: Netlify CLI was not authenticated, so the production app was deployed on the free GitHub Pages service instead.
 
 ## Features
 
@@ -15,7 +16,7 @@ QuotePilot Studio is a polished React + TypeScript web app for freelancers, cons
 - Monetization section for audits, consultations, and template bundles
 - Responsive marketing-grade landing page
 - Unit/component tests with Vitest and Testing Library
-- Production build configured for Netlify
+- Production build configured for static hosting
 
 ## Local run instructions
 
@@ -39,23 +40,24 @@ npm test
 npm run build
 ```
 
-## Netlify deployment
+## Deployment
 
-The project is production-ready and includes `netlify.toml` with:
+The live production build is deployed from the `gh-pages` branch to GitHub Pages:
+
+```bash
+npm run build
+# publish dist/ to gh-pages branch
+```
+
+The project also includes `netlify.toml` and is Netlify-ready:
 
 - Build command: `npm run build`
 - Publish directory: `dist`
 
-Authentication is the only current blocker. To resume deployment:
+If Netlify authentication is later available, deploy with:
 
 ```bash
 cd /mnt/f/study/projects/saas/quote-pilot-studio && npx --yes netlify-cli login && npx --yes netlify-cli deploy --prod --build --dir=dist
-```
-
-After deploy, update this README's Netlify URL, then commit and push:
-
-```bash
-git add README.md && git commit -m "Document verified Netlify deployment" && git push
 ```
 
 ## Monetization instructions
@@ -69,4 +71,5 @@ Use QuotePilot Studio as a lead magnet for freelancers and consultants. Share th
 - Vite
 - Vitest
 - Testing Library
-- Netlify static hosting
+- GitHub Pages static hosting
+- Netlify-ready static configuration
